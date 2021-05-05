@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useStoreContext } from "../../utils/GlobalState";
-import { REMOVE_SAVE, LOADING, UPDATE_SAVED, UPDATE_NOMINATION } from "../../utils/actions";
+import { REMOVE_NOMINATION, LOADING, UPDATE_NOMINATION } from "../../utils/actions";
 import API from "../../utils/API";
 import Col from "react-bootstrap/Col";
 
@@ -9,26 +9,26 @@ function NomCard() {
 
     const getNominated = () => {
         dispatch({ type: LOADING });
-        API.getSaved()
+        API.getnomineed()
             .then(results => {
                 dispatch({
                     type: UPDATE_NOMINATION,
-                    saved: results.data
+                    nomineed: results.data
                 });
             })
             .catch(err => console.log(err));
     };
 
-    // const removeFromSaved = id => {
-    //     API.deleteSave(id)
-    //         .then(() => {
-    //             dispatch({
-    //                 type: REMOVE_SAVE,
-    //                 _id: id
-    //             });
-    //         })
-    //         .catch(err => console.log(err));
-    // };
+    const removeFromNominated = id => {
+        API.deletenominee(id)
+            .then(() => {
+                dispatch({
+                    type: REMOVE_NOMINATION,
+                    _id: id
+                });
+            })
+            .catch(err => console.log(err));
+    };
 
     useEffect(() => {
         getNominated();
@@ -37,7 +37,16 @@ function NomCard() {
     return (
         <Col>
             <h3>Nominations</h3>
-            <ul></ul>
+            {state.nominated.map(nominee => (
+                <ul key={nominee._id}>
+                    <li>
+                        {nominee.title} ({nominee.year})
+                                <span>
+                            <i onClick={() => { removeFromNominated(nominee._id) }}>X</i>
+                        </span>
+                    </li>
+                </ul>
+            ))}
         </Col>
     )
 }
