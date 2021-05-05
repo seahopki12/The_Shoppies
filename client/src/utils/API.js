@@ -2,6 +2,12 @@ import axios from "axios";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
+    getSaved: function() {
+        return axios.get("/api/books");
+      },
+    saveMovie: function (movieData) {
+        return axios.post("/api/movies", movieData);
+    },
     getMoviesByTitle: function (title) {
         return new Promise((resolve, reject) => {
             axios
@@ -19,9 +25,5 @@ export default {
                 })
                 .catch(err => reject(err));
         });
-    },
-    // Saves a post to the database
-    saveMovie: function (movieData) {
-        return axios.post("/api/movies", movieData);
     },
 };

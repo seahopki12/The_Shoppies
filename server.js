@@ -20,7 +20,7 @@ app.use(routes);
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/googlebooks',
+  process.env.MONGODB_URI || 'mongodb://localhost/shoppies',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

@@ -30,7 +30,7 @@ function ResultsCard() {
                 {state.movies.map((movie, index) => (
                     <li key={index}>
                         {movie.title} ({movie.year})
-                        <button onClick={() => { addNom(movie)}}>Nominate</button>
+                        <button onClick={() => {addNom(movie)}}>Nominate</button>
                     </li>
                 ))}
             </ul>
