@@ -1,30 +1,28 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import './App.css';
+import SearchCard from "./components/SearchCard/index.js";
+import ResultsCard from "./components/ResultsCard/index.js";
+import NomCard from "./components/NomCard/index.js";
+import { StoreProvider } from "./utils/GlobalState";
 
 function App() {
+
   return (
     <div>
-      <Navbar fixed="tight" bg="light">
-        <Navbar.Brand>The Shoppies</Navbar.Brand>
-      </Navbar>
-      <Container fluid>
-        <Col>
+      <StoreProvider>
+        <Navbar fixed="tight" bg="light">
+          <Navbar.Brand>The Shoppies</Navbar.Brand>
+        </Navbar>
+        <Container fluid>
+          <SearchCard />
           <Row>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Movie Title</Form.Label>
-              <Form.Control type="search" placeholder="Search movie" />
-            </Form.Group>
+            <ResultsCard />
+            <NomCard />
           </Row>
-          <Row>
-            <Col></Col>
-            <Col></Col>
-          </Row>
-        </Col>
-      </Container>
+        </Container>
+      </StoreProvider>
     </div>
   );
 }
