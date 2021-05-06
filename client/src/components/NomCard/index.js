@@ -9,18 +9,18 @@ function NomCard() {
 
     const getNominated = () => {
         dispatch({ type: LOADING });
-        API.getnomineed()
+        API.getNominated()
             .then(results => {
                 dispatch({
                     type: UPDATE_NOMINATION,
-                    nomineed: results.data
+                    nominated: results.data
                 });
             })
             .catch(err => console.log(err));
     };
 
     const removeFromNominated = id => {
-        API.deletenominee(id)
+        API.deleteNominated(id)
             .then(() => {
                 dispatch({
                     type: REMOVE_NOMINATION,
