@@ -1,6 +1,6 @@
 # The Shoppies
 
-# Link to Website
+## Website
 <https://hopkins-shoppies.herokuapp.com/>
 
 ## Description
