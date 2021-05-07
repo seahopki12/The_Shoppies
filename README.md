@@ -1,4 +1,4 @@
-# Google Book Search
+# The Shoppies
 ## Table of Contents
 
 * [Description](#description)
@@ -9,18 +9,12 @@
 * [Licenses](#licenses)
 * [Questions](#questions)
 ## Description
-This application is designed to provide a platform for users to search through Google's Books API based on the book's title. The user may also use this application to save any of the results from their searches, access further information for a particular book, view saved books, and delete saved books.
-## Installation Instructions
-n/a
-## Usage Information
-n/a
-## Contribution Guidelines
-n/a
-## Test Instructions
-n/a
-## Licenses
+This application allows users to search for and nominate movies they believe should be nominated for The Shoppies.
 
-## Questions
+## Usage Information
+Search for movies in the search field. Click the "nominate" button to add movies to your nominated list. You may only add 5 movies to your nominated list. Click the "x" button to remove a movie from your nominated list.
+
+## Contact
 [Seahopki12](https://github.com/Seahopki12)
 
 <seahopki12@gmail.com>
