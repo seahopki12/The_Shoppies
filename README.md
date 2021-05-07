@@ -1,5 +1,8 @@
 # The Shoppies
 
+# Link to Website
+<https://hopkins-shoppies.herokuapp.com/>
+
 ## Description
 This application allows users to search for and nominate movies they believe should be nominated for The Shoppies.
 
@@ -11,4 +14,4 @@ Search for movies in the search field. Click the "nominate" button to add movies
 
 <seahopki12@gmail.com>
 
-<https://hopkins-shoppies.herokuapp.com/>
+
