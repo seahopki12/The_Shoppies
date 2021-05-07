@@ -19,7 +19,7 @@ function NomCard() {
             .catch(err => console.log(err));
     };
 
-    const removeFromNominated = id => {
+    const removeNominated = id => {
         API.deleteNominated(id)
             .then(() => {
                 dispatch({
@@ -42,7 +42,7 @@ function NomCard() {
                     <li>
                         {nominee.title} ({nominee.year})
                                 <span>
-                            <i onClick={() => { removeFromNominated(nominee._id) }}>X</i>
+                            <button onClick={() => { removeNominated(nominee._id) }}>X</button>
                         </span>
                     </li>
                 </ul>

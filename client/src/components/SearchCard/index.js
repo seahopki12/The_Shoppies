@@ -13,14 +13,23 @@ function SearchCard() {
     const handleChange = e => {
         e.preventDefault();
         dispatch({ type: LOADING });
-        API.getMoviesByTitle(titleRef.current.value)
-            .then(results => {
-                dispatch({
-                    type: UPDATE_MOVIES,
-                    movies: results
-                });
-            })
-            .catch(err => console.log(err));
+
+
+        if (!titleRef.current.value) {
+            dispatch({
+                type: UPDATE_MOVIES,
+                movies: []
+            });
+        } else {
+            API.getMoviesByTitle(titleRef.current.value)
+                .then(results => {
+                    dispatch({
+                        type: UPDATE_MOVIES,
+                        movies: results
+                    });
+                })
+                .catch(err => console.log(err));
+        }
     };
 
     return (
