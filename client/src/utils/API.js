@@ -15,7 +15,7 @@ export default {
     getMoviesByTitle: function (title) {
         return new Promise((resolve, reject) => {
             axios
-                .get(`http://www.omdbapi.com/?i=tt3896198&apikey=eb241b03&s=${title}`)
+                .get(`https://www.omdbapi.com/?i=tt3896198&apikey=eb241b03&s=${title}`)
                 .then(res => {
                     const movies = res.data.Search;
                     console.log(movies);
